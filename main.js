@@ -219,3 +219,104 @@
 //     }
 // }
 // console.log(person)
+
+/**
+ * Spread operator(...)
+ * -Copy array
+ * -Copy object
+ * -Tham trị, tham chiếu
+ * -Merge array
+ * -Thêm phần tử vào mảng
+ * -Sử dụng array như là danh sách các tham số của  function
+ */
+//const person = ['Tay', 'Hoang', 'Huy'];
+// console.log(person[0], person[1], person[2])
+//console.log(...person); //spread là ra ra từng ele --> Tay Hoang Huy
+
+//Copy array
+//Tham chiếu (Array, Object)
+// let num1 = [1, 2, 3];
+// let num2 = num1; 
+// console.log(num1);
+// console.log(num2);
+// num2.push(4); //-->
+// let num1 = [1, 2, 3];
+// let num2 = [...num1]; //copy hoan toan mang num1 //[...num1, 4, 5, 6]
+
+// num2.push(4); 
+// console.log(num1); //--> 123
+// console.log(num2); //--> 1234
+
+//Merge Array : nối mảng lại với nhau
+// var numb1 = [1,2,3];
+// var numb2 = [4,5,6];
+
+// var numb3 = numb1.concat(numb2);
+// console.log(numb3);// --> 123456
+// var num3 = [...numb1, ...numb2];
+// console.log(num3); // --> 123456
+
+//Copy object
+
+// var obj1 = {
+//     a: 1,
+//     b: 2,
+// }
+
+// var obj2 = {...obj1, c: 3};
+// //obj2.c = 3;
+// const users = ['Tay', 'Hoang', 'Huy'];
+// const showUsers = (user1, user2, user3) => console.log(user1, user2, user3);
+// showUsers(...users);
+
+/**
+ * Rest parameter
+ */
+
+// const sum = (num1, num2, num3) => console.log(num1+num2+num3);
+// sum(1,2,3);
+
+// const sum =  (...nums) => {
+//     // console.log(nums);
+//     let num = 0;
+//     nums.forEach(num => {
+//         sum += num;
+//     });
+// }
+// sum(1,2,3); //=>mang  
+
+/**
+ * Module
+ * -import
+ * -export
+ */
+// import {setLocalStorage, getLocalStorage} from './util.js';
+// setLocalStorage();
+// getLocalStorage();
+
+/**
+ * Class: bản chất vẫn là 1 function 
+ */
+
+// expression
+// const Person = class {
+
+// }
+
+//declaration
+// class Person {
+//     constructor(_firstName, _lastName, _birthYear){
+//         this.firstName = _firstName;
+//         this.lastName = _lastName;
+//         this.birthYear = _birthYear;
+//     }
+//     calAge(){
+//         return 2021 - this.birthYear;
+//     }
+// }
+
+
+// const tay = new Person('Chu', 'Tay', '2000');
+// console.log(tay)
+
+// console.log(tay.__proto__ === Person.prototype);
